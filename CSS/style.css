@@ -1,119 +1,159 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 
-* {
-    margin: 0;
+* { margin: 0;}
+html { height: 100%;}
+body {
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    overflow: auto;
+    background-color: pink;
 }
-
+/*----------------------------------------------------------*/
+/*--------------------- Header section ---------------------*/
+/*----------------------------------------------------------*/
 header {
-    width: 100%;
+    order: 1;
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     height: 11em;
-    /*
-    background-image: linear-gradient(to right, #ffffff, #000000);
-    */
+    width: 100%;
+    position: sticky;
+    top: 0;
     background: url("../images/footerBack.avif");
     background-position: center center;
-    top: 0;
-    position: fixed;
     z-index: 1000;
+
 }
-header > h1 {
+.item.title {
     font-family: 'Macondo', cursive;
-    padding-top: 1em;
-    font-size: 3em;
-    text-align: center;
+    font-size: 3.5em;
     text-shadow: 3px -4px 5px #4b0404;
     background-image: linear-gradient(90deg, gold, darkgoldenrod);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: inherit;
-}
+    align-self: center;
+    margin: 0.5em;
+    order: 1;
 
+}
 header img {
     height: 100px;
     width: 100px;
-    margin: 20px 40px 0 0;
-    float: right;
     border-radius: 50%;
+    margin: 0 2em;
 }
-
+.item.logo {
+    align-self: center;
+    order: 2;
+}
 nav {
-    width: 100%;
     height: 2em;
-    position: absolute;
-    bottom: 0;
+    width: 100%;
+    display: inline-flex;
+    align-self: center;
+    order: 3;
 }
-nav > ul {
-    top: 100px;
-    left: 20px;
-    list-style: none;
+nav>div {
+    padding: 0 10px;
     font-size: 1em;
-    margin: 0.5em;
-}
-
-nav li {
-    font-weight: bold;
-    display: inline;
-    margin: 0.5em;
     text-shadow: 3px -4px 5px #4b0404;
     color: blanchedalmond;
 }
 
+/*----------------------------------------------------------*/
+/*--------------------- Main section -----------------------*/
+/*----------------------------------------------------------*/
+
 main {
-    min-height: 100%;
-    height: auto;
+    order: 2;
+    flex: 1 0 auto;
+    font-family: 'Macondo', cursive;
+    width: 100%;
     background: url("../images/mainBackground.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    top: 11em;
-    position: relative;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: space-between;
+    align-content: center;
+    flex-basis: content;
 }
-main td {
-    vertical-align: central;
-    text-align: center;
-    width: 135px;
-    height: 105px;
-    background: #4b0404;
+.mainHero {
+    width: 70%;
+    order: 1;
+    flex: 1 1 auto;
+    margin: 15px;
+    font-size: 1.5em;
 }
-
-.left {
+.mainHero>img {
+    height: 60%;
+    width: 60%;
+    padding: 2px;
+    box-shadow: -6px 8px 5px #000000;
+    border-radius: 20%;
     float: left;
     margin: 15px;
 }
-
-.left > img {
-    height: 300px;
-    width: 400px;
-    border-radius: 20%;
-    box-shadow: -6px 8px 5px #000000;
-
-}
-
-.right {
-    margin: 15px;
-    float: right;
-    border: 1px solid #999;
-}
-
-main h2 {
+.mainHero h2 {
     padding-top: 1em;
 }
-.history {
-    padding-top: 0.5em;
-    font-size: 1em;
+.friends {
+    width: 30%;
+    order: 2;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    align-content: center;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    background: url("../images/backHeroes.jpg");
+
 }
+.hero {
+    align-self: flex-start;
+    margin: 2px;
+    text-align: center;
+}
+.hero:nth-child(1) {
+    width: 100%;
+    align-self: center;
+    margin: 0.5em 0;
+    color: blanchedalmond;
+}
+.hero>img {
+    width: 125px;
+    border-radius: 20%;
+}
+
+/*----------------------------------------------------------*/
+/*--------------------- Footer section ---------------------*/
+/*----------------------------------------------------------*/
 
 footer {
-    height: 6em;
+    order: 3;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     background-color: #7a0101;
-    top: 11em;
-    position: relative;
     bottom: 0;
 }
-
 .button {
+    order: 3;
     height: 30px;
     padding: 5px;
     float: right;
@@ -121,16 +161,14 @@ footer {
     margin: 15px;
     background-color: lightslategray;
 }
-
 .aboutUs {
+    order: 2;
     padding: 25px;
     text-align: center;
-}
-footer img {
-    margin: 20px;
-    float: left;
-}
-
-footer p {
     color: blanchedalmond;
+
+}
+.trLogo {
+    order: 1;
+    margin: 20px;
 }
